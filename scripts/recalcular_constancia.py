@@ -60,7 +60,7 @@ def parse_args():
         "--output-dir",
         type=Path,
         default=DEFAULT_OUTPUT,
-        help="Carpeta de salida (por defecto: resultados_recalculados/).",
+        help="Carpeta de salida (por defecto: data/constancia_aggregated/).",
     )
     return parser.parse_args()
 
