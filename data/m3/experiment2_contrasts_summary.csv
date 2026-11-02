@@ -1,0 +1,15 @@
+outcome,contrast,orientation,n_scenarios,median_relative_pct,min_relative_pct,max_relative_pct,significant_holm
+esag,multicriteria_vs_multicriteria_no_digg,far,12,-2.194,-3.559,-1.661,12
+esag,multicriteria_vs_multicriteria_no_digg,near,12,-0.052,-0.381,0.374,0
+esag,rl_w2_vs_fixed,far,12,-1.91,-2.579,-1.032,12
+esag,rl_w2_vs_fixed,near,12,-0.3,-0.938,0.292,1
+esag,rl_w2_vs_rl_w2_clean,far,12,-1.712,-2.603,-0.871,10
+esag,rl_w2_vs_rl_w2_clean,near,12,-0.246,-0.767,0.278,0
+esag,rl_w6_vs_fixed,far,12,-1.269,-2.4,0.393,7
+esag,rl_w6_vs_fixed,near,12,-0.731,-1.383,-0.051,3
+esag,rl_w6_vs_rl_w6_clean,far,12,-0.195,-0.973,0.467,1
+esag,rl_w6_vs_rl_w6_clean,near,12,-0.841,-1.314,0.065,4
+tph,rl_w2_vs_fixed,far,12,3.056,-0.717,6.971,10
+tph,rl_w2_vs_fixed,near,12,1.41,-0.733,5.521,8
+tph,rl_w6_vs_fixed,far,12,2.823,-1.336,6.491,9
+tph,rl_w6_vs_fixed,near,12,0.621,-2.717,4.307,9

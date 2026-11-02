@@ -1,0 +1,2 @@
+comparison,n_hypogene,n_supergene,mean_difference_kwh_t,welch_t,welch_df,welch_p,cohen_d_pooled_sd,hedges_g,interpretation
+Hypogene minus Supergene; Shell Plant energy,10,4,3.245000,5.595174,9.566178,0.000270,2.071622,1.939391,exploratory; conditional on independence; two lines observed on the same dates

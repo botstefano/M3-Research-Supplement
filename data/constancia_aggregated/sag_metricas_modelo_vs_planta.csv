@@ -1,0 +1,18 @@
+metric,value,definition_or_caution
+n_surveys,14.000000,observaciones pareadas modelo-planta
+mean_shell_model_kwh_t,7.757143,media aritmética
+mean_shell_plant_kwh_t,7.892857,media aritmética
+mean_bias_model_minus_plant_kwh_t,-0.135714,sesgo medio; modelo menos planta
+sd_paired_difference_kwh_t,0.865232,desviación estándar muestral de las diferencias
+bias_ci95_lower_kwh_t,-0.635284,IC t sobre diferencias pareadas; independencia de surveys
+bias_ci95_upper_kwh_t,0.363856,IC t sobre diferencias pareadas; independencia de surveys
+paired_t_statistic,-0.586890,prueba t sobre diferencias pareadas
+paired_t_p_value,0.567330,no rechazar H0 no demuestra equivalencia
+mae_kwh_t,0.707143,media del error absoluto
+rmse_kwh_t,0.844732,raíz de la media de errores cuadrados
+mape_pct,8.878764,porcentaje respecto a Shell Plant
+pearson_r,0.919230,asociación lineal descriptiva
+pearson_p_value,0.000003,no implica causalidad ni validación predictiva
+pearson_r_squared,0.844983,cuadrado de la correlación de Pearson
+max_absolute_error_kwh_t,1.800000,máximo error absoluto
+min_nonzero_absolute_error_kwh_t,0.100000,mínimo error absoluto

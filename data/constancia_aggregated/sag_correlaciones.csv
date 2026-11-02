@@ -1,0 +1,7 @@
+variable,energy_series,pearson_r,p_value_descriptive
+feed_size_p80_mm,shell_model,0.607492,0.021206
+feed_size_p80_mm,shell_plant,0.672372,0.008428
+sgi_min,shell_model,0.962284,0.000000
+sgi_min,shell_plant,0.944120,0.000000
+sag_ag_throughput_tph,shell_model,-0.913235,0.000005
+sag_ag_throughput_tph,shell_plant,-0.978248,0.000000

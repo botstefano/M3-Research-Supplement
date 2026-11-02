@@ -1,0 +1,8 @@
+variable,n,mean,sd_sample,se,cv_pct,minimum,median,maximum,ci95_t_lower,ci95_t_upper,ci_assumption
+feed_size_p80_mm,14,59.327143,9.741419,2.603504,16.419834,45.720000,59.690000,73.660000,53.702615,64.951671,t de Student; surveys tratados como independientes
+sgi_min,14,68.214286,29.535321,7.893646,43.297852,30.000000,67.500000,122.000000,51.161099,85.267472,t de Student; surveys tratados como independientes
+sag_ag_throughput_tph,14,1809.785714,279.056151,74.580893,15.419292,1351.000000,1883.000000,2224.000000,1648.663490,1970.907939,t de Student; surveys tratados como independientes
+sag_mill_product_p80_microns,14,1189.571429,308.989100,82.580811,25.974825,614.000000,1188.000000,1834.000000,1011.166434,1367.976423,t de Student; surveys tratados como independientes
+sag_specific_energy_shell_model_kwh_t,14,7.757143,1.770143,0.473091,22.819524,5.000000,7.500000,10.500000,6.735093,8.779193,t de Student; surveys tratados como independientes
+sag_specific_energy_shell_plant_kwh_t,14,7.892857,2.139901,0.571913,27.111866,5.400000,7.600000,11.400000,6.657315,9.128399,t de Student; surveys tratados como independientes
+sag_correction_factor,14,1.015714,0.105007,0.028064,10.338197,0.850000,1.030000,1.190000,0.955085,1.076343,t de Student; surveys tratados como independientes

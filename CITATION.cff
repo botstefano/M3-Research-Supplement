@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Cite the archived version of this supplementary material when it is published. Add the DOI after publication."
+title: "M-3 research supplement: aggregated simulation results and derived analysis of published Constancia SAG surveys"
+version: "1.0.0-preparation"
+authors:
+  - family-names: "Urbina-Justiniano"
+    given-names: "Estefano Dubersky"
+    affiliation: "Faculty of Engineering, School of Systems Engineering, National University of Trujillo, Peru"
+  - family-names: "Laiza-Condormango"
+    given-names: "José Brandon"
+    affiliation: "Faculty of Engineering, School of Systems Engineering, National University of Trujillo, Peru"
+keywords:
+  - mining simulation
+  - reproducibility
+  - SAG milling
+  - Mine-to-Mill
+  - statistical analysis
