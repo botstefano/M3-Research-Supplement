@@ -1,15 +1,25 @@
 cff-version: 1.2.0
 message: "Please cite the archived version using its Zenodo DOI."
 title: "M-3 research supplement: simulation code, synthetic profiles and aggregated research data"
-version: "1.0.0"
+version: "1.0.1"
 type: software
 authors:
-  - family-names: "Urbina-Justiniano"
+  - family-names: "Urbina Justiniano"
     given-names: "Estefano Dubersky"
-    affiliation: "Faculty of Engineering, School of Systems Engineering, National University of Trujillo, Peru"
-  - family-names: "Laiza-Condormango"
+    orcid: "https://orcid.org/0009-0009-9151-4245"
+    affiliation: "Department of Systems Engineering, Universidad Nacional de Trujillo, Trujillo, La Libertad, Peru"
+  - family-names: "Laiza Condormango"
     given-names: "José Brandon"
-    affiliation: "Faculty of Engineering, School of Systems Engineering, National University of Trujillo, Peru"
+    orcid: "https://orcid.org/0009-0006-1130-1855"
+    affiliation: "Department of Systems Engineering, Universidad Nacional de Trujillo, Trujillo, La Libertad, Peru"
+  - family-names: "Sanchez Ticona"
+    given-names: "Robert Jerry"
+    orcid: "https://orcid.org/0000-0001-9387-1945"
+    affiliation: "Department of Systems Engineering, Universidad Nacional de Trujillo, Trujillo, La Libertad, Peru"
+  - family-names: "Santos Fernández"
+    given-names: "Juan Pedro"
+    orcid: "https://orcid.org/0000-0002-8882-9256"
+    affiliation: "Department of Systems Engineering, Universidad Nacional de Trujillo, Trujillo, La Libertad, Peru"
 repository-code: "https://github.com/botstefano/M3-Research-Supplement"
 keywords:
   - mining simulation
