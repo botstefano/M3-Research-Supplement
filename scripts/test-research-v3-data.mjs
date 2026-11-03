@@ -7,7 +7,7 @@ import ts from "typescript";
 
 const root = new URL("../public/research-v3/", import.meta.url);
 async function csv(name) {
-  const text = await readFile(fileURLToPath(new URL(name, root)), "utf8");
+  const text = await readFile(new URL("../" + name, import.meta.url), "utf8");
   const lines = text.trim().split(/\r?\n/);
   assert.ok(lines.length >= 2, name + " debe contener encabezado y filas.");
   const headers = lines[0].split(",");
@@ -18,10 +18,10 @@ async function csv(name) {
   return { headers, rows };
 }
 
-const exp1 = await csv("experiment1_policy_summary.csv");
-const exp2 = await csv("experiment2_contrasts_summary.csv");
-const constancia = await csv("sag_estadisticas_descriptivas.csv");
-const metrics = await csv("sag_metricas_modelo_vs_planta.csv");
+const exp1 = await csv("data/m3/experiment1_policy_summary.csv");
+const exp2 = await csv("data/m3/experiment2_contrasts_summary.csv");
+const constancia = await csv("data/constancia_aggregated/sag_estadisticas_descriptivas.csv");
+const metrics = await csv("data/constancia_aggregated/sag_metricas_modelo_vs_planta.csv");
 
 const profileSchema = JSON.parse(await readFile(fileURLToPath(new URL("fragmentation-profile.schema.json", root)), "utf8"));
 assert.ok(profileSchema.properties.profiles.items.required.includes("shovelIndex"));
