@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "Cite the archived version of this supplementary material when it is published. Add the DOI after publication."
-title: "M-3 research supplement: aggregated simulation results and derived analysis of published Constancia SAG surveys"
+message: "Please cite the versioned Zenodo record after its DOI has been assigned."
+title: "M-3 research supplement: simulation code, synthetic profiles and aggregated results"
 version: "1.0.0-preparation"
 authors:
   - family-names: "Urbina-Justiniano"
@@ -9,9 +9,17 @@ authors:
   - family-names: "Laiza-Condormango"
     given-names: "José Brandon"
     affiliation: "Faculty of Engineering, School of Systems Engineering, National University of Trujillo, Peru"
+repository-code: "https://github.com/botstefano/M3-Research-Supplement"
 keywords:
   - mining simulation
-  - reproducibility
-  - SAG milling
   - Mine-to-Mill
+  - reproducibility
+  - synthetic profiles
+  - SAG milling
   - statistical analysis
+abstract: >-
+  Supplementary code and aggregated data for a computational M-3 mine-to-mill
+  simulation study. Includes a deterministic synthetic profile generator,
+  research simulation engine, batch runner, software tests, aggregated results
+  from two full experiments and scripts for confirmatory statistical analysis.
+  Synthetic inputs are not field measurements or recovered historical records.

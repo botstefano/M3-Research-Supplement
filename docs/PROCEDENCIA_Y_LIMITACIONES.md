@@ -1,28 +1,42 @@
 # Procedencia, versión y limitaciones
 
-## Versión
+## Estado de esta instantánea
 
-- Estado: `1.0.0-preparation` (borrador no publicado).
+- Estado: preparación privada; release 1.0.0 y DOI todavía no publicados.
 - Fecha de preparación: 2 de noviembre de 2026.
-- DOI: no asignado; solo se añadirá después de la publicación en Zenodo.
-- Este repositorio se ha preparado de forma independiente y no hereda el historial Git de `M3-GemeloDigital`.
+- Licencias adoptadas por los autores para sus contribuciones originales: MIT para código y CC BY 4.0 para documentación, metadatos y tablas agregadas. El alcance está detallado en `LICENSING.md`.
+- El historial Git de este repositorio es independiente; no hereda el historial del repositorio principal.
 
-## Relación con el proyecto principal
+## Código del motor de investigación
 
-Repositorio del proyecto M-3: https://github.com/botstefano/M3-GemeloDigital
+Los archivos del generador, ejecutor, motor de investigación, catálogo, esquema, pruebas y checkpoints PPO se copiaron de `M3-GemeloDigital-Limpio` en el commit `72e7e78812c76eb574c80402176588507697068c`, utilizado en la ejecución integral de los experimentos.
 
-Este repositorio contiene exclusivamente material suplementario seleccionado. No incluye el prototipo web antiguo, el motor ejecutable v3, archivos intermedios ni registros individuales de simulación. La aplicación del repositorio principal no debe confundirse con el motor v3 que produjo los resultados de investigación.
+- Repositorio de origen: https://github.com/botstefano/M3-GemeloDigital-Limpio
+- Ejecución integral: https://github.com/botstefano/M3-GemeloDigital-Limpio/actions/runs/41558645366
 
-## Procedencia de M-3
+## Procedencia de perfiles
 
-Los resúmenes agregados M-3 proceden del paquete de investigación facilitado para revisión. Los datos individuales originales no se incluyen, por lo que este depósito no permite regenerar las 57 600 y 72 000 ejecuciones ni todos los contrastes.
+Los perfiles de entrada son reconstrucciones sintéticas deterministas a partir de parámetros, ecuaciones, orientaciones, semillas y supuestos descritos en el manuscrito. El generador crea un archivo JSON por escenario y réplica. El manuscrito no incluía los archivos históricos originales por pala y réplica. Por tanto, esta reconstrucción no debe describirse como recuperación literal de los inputs históricos.
 
-## Procedencia externa SAG
+El caso base de fragmentación reproduce aproximadamente Q=837,362 kg, q=1,14511 kg/m³, n=1,17939, P80=405,143 mm, B600=7,750 % y D=22,014. Es una comprobación de consistencia con los valores de referencia del manuscrito, no una calibración de campo.
 
-Las seis tablas de `data/constancia_aggregated/` son resultados estadísticos agregados derivados de 14 surveys publicados en la Tabla 13-2 de Hudbay Minerals Inc. (2021). La transcripción fila por fila y las figuras con observaciones individuales no se incluyen. Para recalcular los agregados, la persona usuaria debe preparar localmente un archivo de entrada conforme al esquema documentado.
+## Resultados y análisis
 
-Los datos de Constancia pertenecen a otra operación y no constituyen calibración, validación ni ajuste del motor M-3.
+La ejecución integral generó 57.600 filas individuales para E1 y 72.000 para E2. Se verificaron cero claves escenario-réplica-política duplicadas y cero celdas numéricas no finitas. El análisis contiene 192 contrastes confirmatorios para E1 y 168 para E2; 109 y 86, respectivamente, fueron significativos con corrección de Holm en las pruebas t pareadas.
 
-## Límites de trazabilidad
+Los CSV de salida por fila no están versionados en esta instantánea Git; pueden regenerarse con el generador, ejecutor y análisis incluidos. Los archivos en `data/m3/` son resúmenes agregados, no réplicas individuales.
 
-El manifiesto SHA-256 permite detectar cambios en los archivos incluidos desde la generación del manifiesto; no demuestra autoría, fecha de creación, exactitud científica ni autorización sobre derechos de terceros. La carga posterior a un repositorio Git no demuestra históricamente fechas de preinscripción.
+La CI de esta instantánea instala las dependencias, ejecuta las pruebas de software y hace smoke tests de una réplica por experimento, incluyendo generación de perfiles y ejecución del motor. Esto valida el contrato de ejecución básica del suplemento, pero no equivale a volver a ejecutar los 24 escenarios × 300 réplicas de cada experimento.
+
+## Limitaciones científicas
+
+- Los resultados son estimaciones de simulación, no mejoras operativas ni ahorros medidos.
+- No se comparó cada resultado contra archivos históricos originales por réplica, que no estaban disponibles.
+- La ecuación de energía SAG no está calibrada con datos de planta.
+- No se implementó una función de transferencia del chancador.
+- No existe validación externa en una operación minera real.
+- Los datos SAG externos de Constancia pertenecen a otra operación y no constituyen calibración ni validación de M-3.
+
+## Análisis externo SAG de Constancia
+
+Los agregados de `data/constancia_aggregated/` derivan de 14 surveys publicados en la Tabla 13-2 de Hudbay Minerals Inc. (2021). La transcripción fila por fila y las figuras con observaciones individuales no se redistribuyen aquí. Para recalcular los agregados se debe preparar localmente el CSV descrito en `docs/FUENTE_Y_NOTAS_CONSTANCIA.md`. No se afirma que Hudbay haya autorizado la redistribución de su tabla original. La licencia CC BY 4.0 de los agregados cubre únicamente derechos que los autores posean sobre sus cálculos, selección y presentación, no el informe ni los materiales fuente de Hudbay.

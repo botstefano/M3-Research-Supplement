@@ -1,42 +1,31 @@
-# Diccionario de datos
+# Diccionario de datos y artefactos
 
-## Resultados agregados M-3
+## Resúmenes agregados M-3
 
 ### `data/m3/experiment1_policy_summary.csv`
 
-| Campo | Tipo | Unidad / significado |
-|---|---|---|
-| `policy` | texto | Identificador de política de despacho |
-| `tph_*_rel_pct` | numérico | Diferencia relativa porcentual de productividad frente a asignación fija |
-| `esag_*_rel_pct` | numérico | Diferencia relativa porcentual de energía SAG frente a asignación fija |
-| `cost_*_rel_pct` | numérico | Diferencia relativa porcentual del indicador de costo |
-| `co2_*_rel_pct` | numérico | Diferencia relativa porcentual del indicador de emisiones |
-| `mean` / `median` | numérico | Estadístico de diferencias porcentuales entre escenarios |
-| `min_scenario` / `max_scenario` | numérico | Mínimo y máximo entre escenarios |
+Una fila por política del experimento 1. Para productividad (t/h), energía SAG (kWh/t), costo (USD/t) y CO₂ (kg/t), informa media, mediana, mínimo y máximo de la diferencia porcentual relativa frente a la política fija entre los 24 escenarios. Primero se promedian las 300 réplicas por escenario y política; después se calcula la diferencia relativa por escenario y se resumen las diferencias entre escenarios.
 
 ### `data/m3/experiment2_contrasts_summary.csv`
 
-| Campo | Tipo | Unidad / significado |
-|---|---|---|
-| `outcome` | texto | Indicador (`esag` o `tph`) |
-| `contrast` | texto | Contraste entre políticas |
-| `orientation` | texto | Categoría de orientación (`far` o `near`) |
-| `n_scenarios` | entero | Número de escenarios resumidos |
-| `median_relative_pct` | numérico | Mediana de diferencias relativas porcentuales |
-| `min_relative_pct` / `max_relative_pct` | numérico | Rango de diferencias relativas porcentuales |
-| `significant_holm` | entero | Número de escenarios con `p_holm < 0.05` en el archivo de origen |
+Una fila por resultado, contraste y orientación de los frentes finos. Incluye número de escenarios (12 por orientación), mediana y rango de la diferencia relativa porcentual entre medias por escenario y número de escenarios con prueba t pareada significativa tras Holm.
 
-## Resultados agregados externos SAG
+## Salidas generadas por `scripts/analyze_research_v3.py`
 
-Los archivos de `data/constancia_aggregated/` contienen estadísticos derivados de 14 surveys publicados en Hudbay Minerals (2021). La transcripción fila por fila no está incluida.
+- `experiment1_confirmatory_contrasts.csv`: 192 contrastes confirmatorios con medias, diferencias absolutas y relativas, pruebas t pareadas, Wilcoxon, corrección Holm, dz e intervalo bootstrap del 95 %.
+- `experiment2_confirmatory_contrasts.csv`: 168 contrastes con la misma estructura.
+- `all_confirmatory_contrasts_full.csv`: concatenación de los 360 contrastes.
+- `experiment1_policy_descriptives.csv` y `experiment2_policy_descriptives.csv`: medias y desviaciones estándar globales por política.
+- `experiment1_scenario_policy_means.csv` y `experiment2_scenario_policy_means.csv`: medias por escenario y política, incluyendo diferencias relativas frente a fija.
+- `analysis_summary.json`: controles de integridad y comparaciones clave.
+- `experiment1_policy_summary.csv` y `experiment2_contrasts_summary.csv`: regeneran los dos resúmenes versionados en `data/m3/`.
 
-| Archivo | Contenido |
-|---|---|
-| `sag_estadisticas_descriptivas.csv` | n, media, desviación estándar, error estándar, CV, mínimo, mediana, máximo e intervalos descriptivos |
-| `sag_metricas_modelo_vs_planta.csv` | Sesgo, MAE, RMSE, MAPE, correlación y métricas asociadas |
-| `sag_correlaciones.csv` | Correlaciones descriptivas entre variables publicadas y las dos columnas de energía |
-| `sag_resumen_por_tipo_mena.csv` | Resúmenes agrupados por tipo de mena |
-| `sag_comparacion_por_mena_exploratoria.csv` | Diferencia y prueba exploratoria entre tipos de mena |
-| `sag_resumen_por_fecha.csv` | Número de surveys y promedio de Shell Plant agrupados por fecha |
+Los CSV de fila individual generados por el ejecutor no están versionados en este repositorio; se generan durante la reproducción.
 
-Los resultados SAG no son datos de M-3 y no validan su motor.
+## Esquema de entrada por pala
+
+Cada JSON generado contiene `schemaVersion`, `source`, `scenarioId`, `replicateId` y un arreglo `profiles`. Cada pala incluye `shovelIndex`, `faceId`, `p80Mm` (mm), `rockMassIndex` (A), `diggability` (D) y `powderFactorKgM3` (q, kg/m³). El esquema formal está en `public/research-v3/fragmentation-profile.schema.json`.
+
+## Datos externos SAG de Constancia
+
+Los archivos de `data/constancia_aggregated/` contienen estadísticos derivados de 14 surveys publicados por Hudbay Minerals Inc. (2021), Tabla 13-2. La transcripción fuente fila por fila no está incluida; se necesita preparar localmente un CSV conforme a `docs/FUENTE_Y_NOTAS_CONSTANCIA.md` para volver a calcular las tablas. Estos resultados pertenecen a otra operación y no validan M-3.

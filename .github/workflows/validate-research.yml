@@ -1,0 +1,43 @@
+name: Validate M-3 research supplement
+
+on:
+  push:
+    branches:
+      - master
+      - prepare/zenodo-v1
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Node dependencies
+        run: npm install
+      - name: Run M-3 research tests
+        run: npm run test:research-v3
+      - name: Generate and execute one-replication smoke tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/generate-research-v3-profiles.mjs --experiment 1 --scenario 2p8c_none_hom --replicates 1 --output /tmp/m3-smoke/exp1
+          node scripts/run-research-v3-batch.mjs --experiment 1 --scenario 2p8c_none_hom --replicates 1 --input-dir /tmp/m3-smoke/exp1 --output /tmp/m3-smoke/experiment1.csv
+          test "$(wc -l < /tmp/m3-smoke/experiment1.csv)" -eq 9
+          node scripts/generate-research-v3-profiles.mjs --experiment 2 --scenario 2p8c_none_het --replicates 1 --output /tmp/m3-smoke/exp2
+          node scripts/run-research-v3-batch.mjs --experiment 2 --scenario 2p8c_none_het --replicates 1 --input-dir /tmp/m3-smoke/exp2 --output /tmp/m3-smoke/experiment2.csv
+          test "$(wc -l < /tmp/m3-smoke/experiment2.csv)" -eq 11
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install statistical-analysis dependencies
+        run: python -m pip install -r scripts/requirements-research-analysis.txt
+      - name: Compile-check Python scripts
+        run: python -m py_compile scripts/analyze_research_v3.py scripts/recalcular_constancia.py

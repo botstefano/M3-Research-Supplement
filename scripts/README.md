@@ -1,25 +1,39 @@
-# Script de recálculo externo SAG
+# Scripts del suplemento M-3
 
-`recalcular_constancia.py` recalcula seis tablas estadísticas agregadas a partir de un CSV local preparado por el usuario desde la fuente original. El archivo con los 14 registros no está incluido en el repositorio.
+## Motor de investigación M-3 v3 (Node.js)
 
-## Instalación
+- `generate-research-v3-profiles.mjs`: genera perfiles sintéticos deterministas desde el catálogo de escenarios y las ecuaciones documentadas.
+- `run-research-v3-batch.mjs`: ejecuta los experimentos desde carpetas con archivos JSON por escenario y réplica.
+- `test-research-v3-profile-generator.mjs`: prueba semillas, ecuaciones, orientación y reproducibilidad.
+- `test-research-v3-data.mjs`: prueba contratos de datos y catálogo de escenarios.
+- `test-research-v3-engine.mjs`: prueba el motor, checkpoints y ejecución.
+- `test-research-batch.mjs`: prueba la interfaz del ejecutor por lotes.
 
-Desde la raíz del repositorio:
+La guía completa está en `docs/REPRODUCCION_M3_V3.md`. Requiere Node.js 20+ y TypeScript 5.8.2. Los perfiles generados son reconstrucciones sintéticas, no datos de campo.
 
-```powershell
+## Análisis estadístico M-3 (Python)
+
+Instalación:
+
+~~~bash
+python -m pip install -r scripts/requirements-research-analysis.txt
+~~~
+
+Ejecución después de generar los CSV individuales:
+
+~~~bash
+python scripts/analyze_research_v3.py --exp1 ./research-results/experiment1.csv --exp2 ./research-results/experiment2.csv --output-dir ./research-analysis
+~~~
+
+El script valida dimensiones, duplicados y valores finitos, y calcula contrastes confirmatorios, corrección Holm, Wilcoxon, tamaños de efecto, intervalos bootstrap y tablas resumen.
+
+## Recálculo externo SAG de Constancia
+
+`recalcular_constancia.py` conserva el análisis externo original y requiere un CSV local preparado desde la fuente original. Ese archivo de entrada no se distribuye. Su esquema está en `docs/FUENTE_Y_NOTAS_CONSTANCIA.md`.
+
+~~~powershell
 py -m pip install -r .\scripts\requirements.txt
-```
-
-## Ejecución
-
-```powershell
 py .\scripts\recalcular_constancia.py --input "RUTA\LOCAL\constancia_sag.csv"
-```
+~~~
 
-Para escribir los resultados en otra carpeta:
-
-```powershell
-py .\scripts\recalcular_constancia.py --input "RUTA\LOCAL\constancia_sag.csv" --output-dir "RUTA\SALIDA"
-```
-
-El programa valida las columnas requeridas, 14 registros, ausencia de valores nulos, identificadores no duplicados y categorías de mena. No descarga el informe, no copia la entrada, no genera gráficos individuales y no ejecuta ni modifica el motor M-3.
+El análisis de Constancia no ejecuta, calibra ni valida el motor M-3.

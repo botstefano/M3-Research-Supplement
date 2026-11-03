@@ -1,0 +1,21 @@
+{
+  "name": "m3-research-supplement",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "generate:research-v3-profiles": "node scripts/generate-research-v3-profiles.mjs",
+    "run:research-v3": "node scripts/run-research-v3-batch.mjs",
+    "test:research-v3-profile-generator": "node scripts/test-research-v3-profile-generator.mjs",
+    "test:research-v3-data": "node scripts/test-research-v3-data.mjs",
+    "test:research-v3-engine": "node scripts/test-research-v3-engine.mjs",
+    "test:research-batch": "node scripts/test-research-batch.mjs",
+    "test:research-v3": "npm run test:research-v3-data && npm run test:research-v3-engine && npm run test:research-batch && npm run test:research-v3-profile-generator"
+  },
+  "devDependencies": {
+    "typescript": "5.8.2"
+  }
+}
