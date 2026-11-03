@@ -1,7 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite the archived version using its Zenodo DOI."
-title: "M-3 research supplement: simulation code, synthetic profiles and aggregated results"
+title: "M-3 research supplement: simulation code, synthetic profiles and aggregated research data"
 version: "1.0.0"
+type: software
 authors:
   - family-names: "Urbina-Justiniano"
     given-names: "Estefano Dubersky"
@@ -18,8 +19,15 @@ keywords:
   - SAG milling
   - statistical analysis
 abstract: >-
-  Supplementary code and aggregated data for a computational M-3 mine-to-mill
-  simulation study. Includes a deterministic synthetic profile generator,
-  research simulation engine, batch runner, software tests, aggregated results
-  from two full experiments and scripts for confirmatory statistical analysis.
-  Synthetic inputs are not field measurements or recovered historical records.
+  Research software and supplementary data for a computational M-3 mine-to-mill
+  simulation study. Includes a deterministic synthetic-profile generator,
+  research simulation engine v3, scenario catalogue, PPO checkpoints, batch
+  runner, software tests and confirmatory statistical-analysis scripts. The
+  archived outputs cover two experiments with 24 scenarios and 300 replications
+  per scenario: 57,600 result rows for E1 and 72,000 for E2. Input profiles are
+  synthetic reconstructions based on manuscript equations, assumptions and
+  seeds; they are not recovered historical records or field measurements.
+  Results are simulation estimates, not observed operational savings. The SAG
+  energy equation is not calibrated with plant data, and no crusher transfer
+  function is implemented. The separate Constancia aggregate analysis does
+  not calibrate or validate the M-3 model.
