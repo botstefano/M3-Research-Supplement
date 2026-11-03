@@ -16,7 +16,7 @@
 - [x] Registrar el commit exacto utilizado en la ejecución integral: `72e7e78812c76eb574c80402176588507697068c`.
 - [x] Registrar la ejecución integral: [GitHub Actions run 41558645366](https://github.com/botstefano/M3-GemeloDigital-Limpio/actions/runs/41558645366).
 - [x] Versionar generador, ejecutor, motor, checkpoints, pruebas y script estadístico.
-- [ ] Regenerar el manifiesto SHA-256 para la instantánea de preparación.
+- [x] Regenerar el manifiesto SHA-256 para la instantánea de preparación.
 - [ ] Clonar esta rama en una instalación limpia.
 - [ ] Ejecutar `npm install` y `npm run test:research-v3`.
 - [ ] Generar perfiles y volver a ejecutar ambos experimentos.
