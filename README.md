@@ -2,7 +2,7 @@
 
 **Material suplementario del estudio computacional de simulación M-3 (Mine-to-Mill).**
 
-> **Estado:** repositorio público. La versión 1.0.0 está archivada en Zenodo: [https://doi.org/10.5281/zenodo.23904017](https://doi.org/10.5281/zenodo.23904017). La siguiente versión prepara la incorporación de los archivos suplementarios completos y la corrección de los metadatos de autoría. Los autores confirmaron la distribución de sus contribuciones originales bajo el esquema de licencias duales documentado en [LICENSING.md](LICENSING.md).
+> **Estado:** repositorio público. El DOI general de todas las versiones es [10.5281/zenodo.23904015](https://doi.org/10.5281/zenodo.23904015); la versión 1.0.0 está archivada en [10.5281/zenodo.23904017](https://doi.org/10.5281/zenodo.23904017). La versión 1.0.1 prepara la incorporación de los archivos suplementarios completos y la corrección de los metadatos de autoría. Los autores confirmaron la distribución de sus contribuciones originales bajo el esquema de licencias duales documentado en [LICENSING.md](LICENSING.md).
 
 ## Autores
 
