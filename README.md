@@ -2,7 +2,16 @@
 
 **Material suplementario del estudio computacional de simulación M-3 (Mine-to-Mill).**
 
-> **Estado: revisión previa a publicación.** El repositorio permanece privado, no tiene DOI y el PR de preparación está pendiente de aprobación. Los autores confirmaron la distribución de sus contribuciones originales bajo el esquema de licencias duales documentado en [LICENSING.md](LICENSING.md).
+> **Estado:** repositorio público. La versión 1.0.0 está archivada en Zenodo: [https://doi.org/10.5281/zenodo.23904017](https://doi.org/10.5281/zenodo.23904017). La siguiente versión prepara la incorporación de los archivos suplementarios completos y la corrección de los metadatos de autoría. Los autores confirmaron la distribución de sus contribuciones originales bajo el esquema de licencias duales documentado en [LICENSING.md](LICENSING.md).
+
+## Autores
+
+1. Estefano Dubersky Urbina Justiniano — [ORCID 0009-0009-9151-4245](https://orcid.org/0009-0009-9151-4245).
+2. José Brandon Laiza Condormango — [ORCID 0009-0006-1130-1855](https://orcid.org/0009-0006-1130-1855).
+3. Robert Jerry Sanchez Ticona — [ORCID 0000-0001-9387-1945](https://orcid.org/0000-0001-9387-1945).
+4. Juan Pedro Santos Fernández — [ORCID 0000-0002-8882-9256](https://orcid.org/0000-0002-8882-9256).
+
+**Afiliación:** Department of Systems Engineering, Universidad Nacional de Trujillo, Trujillo, La Libertad, Peru.
 
 ## Propósito
 
@@ -17,7 +26,7 @@ M-3 se presenta como un **modelo de simulación**. No es un gemelo digital conec
 - **Análisis estadístico reproducible:** `scripts/analyze_research_v3.py`, con dependencias fijadas en `scripts/requirements-research-analysis.txt`.
 - **Análisis externo SAG de Constancia:** seis tablas estadísticas agregadas, documentación de procedencia y un script separado para recalcularlas.
 - **Datos completos para archivo:** dos ZIP independientes, preparados y verificados para adjuntar a Zenodo. Su contenido, tamaños y SHA-256 están en [ZENODO_UPLOAD_PLAN.md](ZENODO_UPLOAD_PLAN.md).
-- **Documentación y metadatos:** guía de reproducción, diccionario de datos, mapa de evidencia, procedencia, limitaciones, `CITATION.cff` y metadatos propuestos para Zenodo.
+- **Documentación y metadatos:** guía de reproducción, diccionario de datos, mapa de evidencia, procedencia, limitaciones, `CITATION.cff` y metadatos de Zenodo.
 
 ## Reproducción de M-3
 
