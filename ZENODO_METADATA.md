@@ -1,17 +1,21 @@
 # Metadatos propuestos para Zenodo
 
-**Tipo de recurso propuesto:** Software (incluye código ejecutable y datos complementarios agregados).  
+**Tipo de recurso:** Software (incluye código ejecutable y datos complementarios agregados).  
 **Título:** M-3 research supplement: simulation software, synthetic profiles and aggregated research data  
-**Versión propuesta:** 1.0.0 (release prevista después de aprobar el PR y habilitar la integración).  
+**Versión siguiente propuesta:** 1.0.1 (corrección de metadatos de autoría y archivo suplementario completo).  
 **Idioma principal:** Español.  
-**DOI:** no asignado; Zenodo lo asignará al publicar la versión archivada.
+**DOI de la versión anterior:** https://doi.org/10.5281/zenodo.23904017. El DOI de la nueva versión será asignado por Zenodo al publicarla.
 
 ## Creadores
 
-1. Estefano Dubersky Urbina-Justiniano — Facultad de Ingeniería, Escuela de Ingeniería de Sistemas, Universidad Nacional de Trujillo, Perú.
-2. José Brandon Laiza-Condormango — Facultad de Ingeniería, Escuela de Ingeniería de Sistemas, Universidad Nacional de Trujillo, Perú.
+1. Estefano Dubersky Urbina Justiniano — ORCID: https://orcid.org/0009-0009-9151-4245.
+2. José Brandon Laiza Condormango — ORCID: https://orcid.org/0009-0006-1130-1855.
+3. Robert Jerry Sanchez Ticona — ORCID: https://orcid.org/0000-0001-9387-1945.
+4. Juan Pedro Santos Fernández — ORCID: https://orcid.org/0000-0002-8882-9256.
 
-No se incluyen ORCID porque no han sido confirmados.
+**Afiliación de los cuatro autores:** Department of Systems Engineering, Universidad Nacional de Trujillo, Trujillo, La Libertad, Peru.
+
+El orden y los nombres de los creadores deben coincidir con el manuscrito aprobado. No incluir números de DNI en el depósito.
 
 ## Descripción sugerida
 
