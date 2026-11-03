@@ -1,41 +1,44 @@
-# Metadatos sugeridos para Zenodo
+# Metadatos propuestos para Zenodo
 
-**Tipo de recurso:** Dataset (confirmar si la revista o la institución recomienda otra categoría).  
-**Título:** Material suplementario del estudio M-3: resultados agregados de simulación y análisis estadístico externo SAG  
-**Versión propuesta:** 1.0.0 (pendiente de aprobación final de ambos autores)  
-**Idioma:** Español  
-**Fecha de publicación:** la que asigne Zenodo al publicar  
-**DOI:** no asignado; Zenodo lo proporcionará al publicar.
+**Tipo de recurso propuesto:** Software (el registro reúne código de simulación y análisis junto con datos suplementarios agregados; confirmar la categoría disponible en Zenodo).  
+**Título:** M-3 research supplement: simulation code, synthetic profiles and aggregated results  
+**Versión propuesta:** 1.0.0 (no publicar hasta revisión y aprobación de ambos autores).  
+**Idioma principal:** Español.  
+**DOI:** no asignado; Zenodo lo asignará al publicar la versión archivada.
 
 ## Creadores
 
 1. Estefano Dubersky Urbina-Justiniano — Facultad de Ingeniería, Escuela de Ingeniería de Sistemas, Universidad Nacional de Trujillo, Perú.
 2. José Brandon Laiza-Condormango — Facultad de Ingeniería, Escuela de Ingeniería de Sistemas, Universidad Nacional de Trujillo, Perú.
 
-No se incluyen ORCID porque no han sido confirmados por los autores.
+No se incluyen ORCID porque no han sido confirmados por ambos autores.
 
 ## Descripción sugerida
 
-Material suplementario asociado a un estudio de simulación M-3 del ciclo mina-molino. Incluye resúmenes estadísticos agregados de dos experimentos de simulación y seis tablas de resultados estadísticos agregados derivados del análisis de 14 surveys SAG publicados para la operación Constancia en la Tabla 13-2 del informe técnico NI 43-101 de Hudbay Minerals Inc. (2021). Incluye documentación de variables, metodología y un script para recalcular las tablas SAG a partir de un archivo de entrada que el usuario debe preparar localmente desde la fuente original.
+Material suplementario asociado a un estudio computacional de simulación M-3 del ciclo mina-molino. Incluye un generador determinista de perfiles sintéticos basado en ecuaciones y supuestos del manuscrito; el motor de investigación v3, catálogo de escenarios y checkpoints PPO; el ejecutor por lotes y pruebas de software; resúmenes estadísticos agregados de dos experimentos completos (24 escenarios, 300 réplicas por escenario; 57.600 filas para E1 y 72.000 para E2); un script para recalcular pruebas confirmatorias, corrección de Holm, pruebas de Wilcoxon, tamaños de efecto e intervalos bootstrap; y documentación de procedencia y limitaciones. Incluye además un análisis estadístico separado de 14 surveys SAG publicados para la operación Constancia.
 
-Este depósito no incluye la transcripción fila por fila de la Tabla 13-2, figuras con observaciones individuales, el motor ejecutable M-3 ni los registros individuales completos de las simulaciones. Por tanto, no permite reproducir íntegramente los experimentos M-3 ni recalcular el análisis SAG sin preparar de forma independiente el archivo de entrada. Los resultados de Constancia son externos y descriptivos; no calibran ni validan el motor M-3.
+Los perfiles de M-3 son reconstrucciones sintéticas desde ecuaciones, parámetros y semillas declarados en el manuscrito; no son datos de campo ni archivos históricos originales recuperados. Los resultados son estimaciones de simulación, no ahorros operativos observados. La ecuación energética SAG de M-3 no está calibrada con datos de planta y no se implementó una función de transferencia del chancador.
+
+Los resúmenes agregados se incluyen en `data/m3/`. Los CSV individuales de 129.600 filas no están incluidos en la instantánea Git; pueden regenerarse mediante los scripts. Si los autores o la revista requieren que los registros individuales formen parte del depósito, deben adjuntarse como archivos separados antes de publicar el registro. El análisis de Constancia no calibra ni valida M-3; la transcripción fila por fila de la Tabla 13-2 y el informe de Hudbay no se redistribuyen aquí.
 
 ## Palabras clave
 
 - simulación minera
-- reproducibilidad
-- despacho de camiones
-- molienda SAG
 - Mine-to-Mill
+- despacho de camiones
+- fragmentación de roca
+- molienda SAG
+- reproducibilidad computacional
+- perfiles sintéticos
 - análisis estadístico
-- resultados agregados
 
-## Referencia relacionada
+## Referencias relacionadas
 
-Hudbay Minerals Inc. (2021). *NI 43-101 Technical Report: Constancia Mine, Cuzco, Peru*. Tabla 13-2.
-
-Repositorio de materiales: https://github.com/botstefano/M3-Research-Supplement (completar solo después de crear el repositorio).
+- Repositorio del suplemento: https://github.com/botstefano/M3-Research-Supplement
+- Código de origen y ejecución: https://github.com/botstefano/M3-GemeloDigital-Limpio
+- Ejecución integral: https://github.com/botstefano/M3-GemeloDigital-Limpio/actions/runs/41558645366
+- Hudbay Minerals Inc. (2021). *NI 43-101 Technical Report: Constancia Mine, Cuzco, Peru*. Tabla 13-2.
 
 ## Licencia
 
-No seleccionar CC0, CC-BY ni otra licencia hasta que ambos autores confirmen por escrito la licencia aplicable a los materiales que efectivamente han creado y pueden distribuir. Zenodo exige un campo de licencia para publicar un registro.
+No seleccionar CC0, CC-BY ni otra licencia hasta que ambos autores confirmen por escrito la licencia aplicable a cada componente que pueden distribuir. Zenodo exige seleccionar una licencia compatible con los derechos del contenido depositado.

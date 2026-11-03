@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 2,
+  "source": "describir fuente real o cálculo trazable",
+  "scenarioId": "2p8c_none_hom",
+  "replicateId": 1,
+  "profiles": [
+    {
+      "shovelIndex": 0,
+      "faceId": "identificador-frente-pala-1",
+      "p80Mm": 405,
+      "rockMassIndex": 7.2,
+      "diggability": 22,
+      "powderFactorKgM3": 1.145
+    },
+    {
+      "shovelIndex": 1,
+      "faceId": "identificador-frente-pala-2",
+      "p80Mm": 405,
+      "rockMassIndex": 7.2,
+      "diggability": 22,
+      "powderFactorKgM3": 1.145
+    }
+  ]
+}

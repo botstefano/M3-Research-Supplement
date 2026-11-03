@@ -1,11 +1,16 @@
 .venv/
 venv/
+node_modules/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
 .DS_Store
 Thumbs.db
-# Keep locally prepared source rows out of version control.
+# Reproducible generated inputs and row-level experiment outputs.
+research-input/
+research-results/
+research-analysis/
+# User-prepared source data are not redistributed.
 local_input/
 constancia_sag_local.csv

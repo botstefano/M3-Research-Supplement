@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/botstefano/M3-GemeloDigital-Limpio/blob/main/public/research-v3/fragmentation-profile.schema.json",
+  "title": "M-3 external face profile set (schema v2)",
+  "description": "Externally prepared per-face inputs. One uniquely indexed record is required per shovel. powderFactorKgM3 is q in kg/m3 and is used in the article's unit-cost equation. This schema does not calculate fragmentation from blast design.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "source", "scenarioId", "replicateId", "profiles"],
+  "properties": {
+    "schemaVersion": { "const": 2 },
+    "source": { "type": "string", "minLength": 1 },
+    "scenarioId": { "type": "string", "minLength": 1 },
+    "replicateId": { "type": "integer", "minimum": 1, "maximum": 300 },
+    "profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["shovelIndex", "faceId", "p80Mm", "rockMassIndex", "diggability", "powderFactorKgM3"],
+        "properties": {
+          "shovelIndex": { "type": "integer", "minimum": 0, "maximum": 3 },
+          "faceId": { "type": "string", "minLength": 1 },
+          "p80Mm": { "type": "number", "minimum": 5, "maximum": 1500 },
+          "rockMassIndex": { "type": "number", "minimum": 1, "maximum": 14 },
+          "diggability": { "type": "number", "minimum": 0, "maximum": 100 },
+          "powderFactorKgM3": { "type": "number", "exclusiveMinimum": 0 }
+        }
+      }
+    }
+  }
+}
