@@ -19,7 +19,9 @@ Material suplementario asociado a un estudio computacional de simulación M-3 de
 
 Los perfiles de M-3 son reconstrucciones sintéticas desde ecuaciones, parámetros y semillas declarados en el manuscrito; no son datos de campo ni archivos históricos originales recuperados. Los resultados son estimaciones de simulación, no ahorros operativos observados. La ecuación energética SAG de M-3 no está calibrada con datos de planta y no se implementó una función de transferencia del chancador.
 
-Los resúmenes agregados se incluyen en `data/m3/`. Los CSV individuales de 129.600 filas no están incluidos en la instantánea Git; pueden regenerarse mediante los scripts. Si los autores o la revista requieren que los registros individuales formen parte del depósito, deben adjuntarse como archivos separados antes de publicar el registro. El análisis de Constancia no calibra ni valida M-3; la transcripción fila por fila de la Tabla 13-2 y el informe de Hudbay no se redistribuyen aquí.
+El registro debe incluir los dos archivos suplementarios descritos en `ZENODO_UPLOAD_PLAN.md`: el ZIP de resultados individuales y análisis estadístico, y el ZIP de perfiles sintéticos y manifiestos. Los CSV individuales no se almacenan en Git, pero se adjuntan al depósito permanente para preservar la versión exacta ejecutada.
+
+El análisis de Constancia no calibra ni valida M-3; la transcripción fila por fila de la Tabla 13-2 y el informe de Hudbay no se redistribuyen aquí.
 
 ## Palabras clave
 
@@ -44,8 +46,8 @@ Los resúmenes agregados se incluyen en `data/m3/`. Los CSV individuales de 129.
 Este depósito contiene materiales con dos licencias, de acuerdo con el esquema vigente de Zenodo para cargas con licencias mixtas:
 
 1. **MIT** — código fuente, scripts, motor, pruebas, esquemas JSON, plantilla y checkpoints PPO.
-2. **CC BY 4.0** — documentación, metadatos y tablas de datos agregadas.
+2. **CC BY 4.0** — documentación, metadatos y tablas de datos agregadas, incluido el contenido de los dos ZIP suplementarios.
 
-En el formulario de Zenodo, usar el selector para incluir ambas licencias y verificar su alcance antes de publicar. No usar únicamente la licencia predeterminada del formulario. La guía de Zenodo para cargas con licencias mixtas está en https://help.zenodo.org/docs/deposit/describe-records/licenses/.
+En el formulario de Zenodo, usar el selector para incluir ambas licencias y verificar su alcance antes de publicar. No usar únicamente la licencia predeterminada del formulario. La guía oficial está en https://help.zenodo.org/docs/deposit/describe-records/licenses/.
 
 CC BY 4.0 cubre únicamente derechos que los autores pueden licenciar en sus cálculos, selección y presentación; no cubre el informe de Hudbay ni supone autorización de Hudbay sobre sus materiales.

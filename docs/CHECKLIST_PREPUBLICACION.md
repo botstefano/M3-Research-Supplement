@@ -11,7 +11,8 @@
 - [x] Documentar el esquema de licencias duales y sus límites de materiales de terceros.
 - [ ] Confirmar que el título, orden de autores y afiliaciones coinciden exactamente con el manuscrito definitivo.
 - [ ] Confirmar las políticas de la Universidad y de la revista sobre licencia y depósito.
-- [ ] Decidir si los CSV individuales E1/E2 se adjuntarán al registro Zenodo como archivos adicionales.
+- [x] Preparar y verificar los ZIP suplementarios con perfiles sintéticos, CSV individuales E1/E2, manifiestos y análisis; registrar SHA-256 en `ZENODO_UPLOAD_PLAN.md`.
+- [ ] Adjuntar ambos ZIP al registro Zenodo y verificar sus SHA-256 después de la descarga.
 
 ## Reproducibilidad e integridad
 
@@ -24,7 +25,8 @@
 - [ ] Clonar el repositorio integrado y verificar nuevamente el manifiesto antes del release.
 - [ ] Ejecutar la reproducción integral de 24 escenarios × 300 réplicas en ambos experimentos desde esta instantánea del suplemento.
 - [ ] Ejecutar el análisis sobre ambos CSV completos y comparar todos los resúmenes con `data/m3/`.
-- [ ] Decidir y verificar la inclusión de los CSV individuales de 129.600 filas en el depósito definitivo.
+- [x] Definir los dos ZIP suplementarios como archivos del depósito definitivo; no almacenar los binarios en Git.
+- [ ] Verificar el SHA-256 de los dos ZIP después de cargarlos y volverlos a descargar desde Zenodo.
 - [x] No afirmar recuperación literal de archivos históricos ni validación industrial.
 
 ## Licencia y metadatos
