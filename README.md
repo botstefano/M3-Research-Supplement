@@ -1,18 +1,18 @@
 # M-3 Research Supplement
 
-**Material suplementario del estudio de simulación M-3 (Mine-to-Mill).**
+**Material suplementario del estudio computacional de simulación M-3 (Mine-to-Mill).**
 
-> **Estado: preparación privada.** No se ha asignado DOI. La licencia de distribución sigue pendiente de aprobación expresa de ambos autores.
+> **Estado: revisión previa a publicación.** El repositorio permanece privado, no tiene DOI y el PR de preparación está pendiente de aprobación. Los autores confirmaron la distribución de sus contribuciones originales bajo el esquema de licencias duales documentado en [LICENSING.md](LICENSING.md).
 
 ## Propósito
 
-Este repositorio reúne código y documentación para generar perfiles de entrada sintéticos, ejecutar los experimentos computacionales M-3 y recalcular sus análisis estadísticos. También contiene resúmenes agregados M-3 y un análisis estadístico independiente de 14 surveys SAG publicados para la operación Constancia.
+Este repositorio reúne el código, la documentación y las tablas agregadas para reconstruir y ejecutar los experimentos computacionales M-3, junto con un análisis estadístico independiente de 14 surveys SAG publicados para la operación Constancia.
 
 M-3 se presenta como un **modelo de simulación**. No es un gemelo digital conectado a una mina real ni una implementación validada industrialmente.
 
 ## Contenido
 
-- **Código M-3 v3:** generador de perfiles, ejecutor por lotes, motor, catálogo de escenarios, esquema JSON, checkpoints PPO y pruebas. Esta instantánea procede del commit `72e7e78812c76eb574c80402176588507697068c` de [M3-GemeloDigital-Limpio](https://github.com/botstefano/M3-GemeloDigital-Limpio), usado en la ejecución integral documentada.
+- **Código M-3 v3:** generador de perfiles, ejecutor por lotes, motor, catálogo de escenarios, esquema JSON, checkpoints PPO y pruebas. Esta instantánea procede del commit `72e7e78812c76eb574c80402176588507697068c` de [M3-GemeloDigital-Limpio](https://github.com/botstefano/M3-GemeloDigital-Limpio), empleado en la ejecución integral documentada.
 - **Resultados agregados M-3:** dos resúmenes CSV en `data/m3/`.
 - **Análisis estadístico reproducible:** `scripts/analyze_research_v3.py`, con dependencias fijadas en `scripts/requirements-research-analysis.txt`.
 - **Análisis externo SAG de Constancia:** seis tablas estadísticas agregadas, documentación de procedencia y un script separado para recalcularlas.
@@ -27,6 +27,8 @@ La ejecución integral confirmada generó 57.600 filas para el experimento 1 y 7
 ## Evidencia de ejecución
 
 La ejecución integral se completó en [GitHub Actions run 41558645366](https://github.com/botstefano/M3-GemeloDigital-Limpio/actions/runs/41558645366), desde el commit `72e7e78812c76eb574c80402176588507697068c`. Se verificaron los recuentos esperados, cero claves escenario-réplica-política duplicadas y cero celdas numéricas no finitas. El análisis produjo 192 contrastes confirmatorios en E1 y 168 en E2; 109 y 86, respectivamente, fueron significativos con corrección de Holm para pruebas t pareadas. Véase [docs/RESULTADOS_EJECUCION_INTEGRAL.md](docs/RESULTADOS_EJECUCION_INTEGRAL.md).
+
+El workflow de este repositorio también comprueba las pruebas de software y ejecuta smoke tests de una réplica por experimento. Ese smoke test verifica que el paquete suplementario genera las entradas y ejecuta el motor; no sustituye una nueva ejecución integral de los 48 escenarios-experimento.
 
 ## Límites de interpretación
 
@@ -45,19 +47,20 @@ M3-Research-Supplement/
 ├── public/research-v3/          # esquema, plantilla y checkpoints PPO
 ├── scripts/                    # generador, runner, pruebas y análisis
 ├── src/                         # motor y escenarios de investigación
+├── LICENSES/                    # textos MIT y CC BY 4.0
+├── LICENSING.md                 # mapa de licencias por carpeta/tipo
 ├── CITATION.cff
-├── LICENSE_PENDING.md
 ├── MANIFEST_SHA256.txt
 └── ZENODO_METADATA.md
 ~~~
 
 ## Zenodo y cita
 
-No crear una release ni solicitar un DOI hasta completar [docs/CHECKLIST_PREPUBLICACION.md](docs/CHECKLIST_PREPUBLICACION.md), acordar una licencia entre ambos autores y habilitar la integración GitHub–Zenodo. El DOI se añadirá únicamente después de que Zenodo archive y publique la versión definitiva.
+No crear una release ni solicitar un DOI hasta aprobar el PR y completar [docs/CHECKLIST_PREPUBLICACION.md](docs/CHECKLIST_PREPUBLICACION.md). Después de integrar el PR, cambiar el repositorio a público y habilitarlo en Zenodo; **solo entonces** crear la release `v1.0.0`. La integración archiva nuevas releases posteriores a su habilitación. El DOI se añadirá a `CITATION.cff`, README y manuscrito una vez asignado.
 
-## Licencia
+## Licencias
 
-No hay una licencia abierta asignada. Véase [LICENSE_PENDING.md](LICENSE_PENDING.md). Mantener el repositorio privado hasta confirmar derechos, licencia y contenido que se divulgará.
+El código y los checkpoints se publican bajo **MIT**. La documentación, metadatos y tablas agregadas se publican bajo **CC BY 4.0**. Los archivos de Constancia se refieren a cálculos agregados de los autores y no relicencian el informe ni la tabla fuente de Hudbay. El alcance completo y los avisos están en [LICENSING.md](LICENSING.md), [LICENSES/](LICENSES/) y [NOTICE.md](NOTICE.md).
 
 ## Fuente externa
 

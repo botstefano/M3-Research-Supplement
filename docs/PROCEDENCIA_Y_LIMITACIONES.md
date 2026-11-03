@@ -4,7 +4,7 @@
 
 - Estado: preparación privada; release 1.0.0 y DOI todavía no publicados.
 - Fecha de preparación: 2 de noviembre de 2026.
-- Licencia: pendiente de aprobación de ambos autores.
+- Licencias adoptadas por los autores para sus contribuciones originales: MIT para código y CC BY 4.0 para documentación, metadatos y tablas agregadas. El alcance está detallado en `LICENSING.md`.
 - El historial Git de este repositorio es independiente; no hereda el historial del repositorio principal.
 
 ## Código del motor de investigación
@@ -26,6 +26,8 @@ La ejecución integral generó 57.600 filas individuales para E1 y 72.000 para E
 
 Los CSV de salida por fila no están versionados en esta instantánea Git; pueden regenerarse con el generador, ejecutor y análisis incluidos. Los archivos en `data/m3/` son resúmenes agregados, no réplicas individuales.
 
+La CI de esta instantánea instala las dependencias, ejecuta las pruebas de software y hace smoke tests de una réplica por experimento, incluyendo generación de perfiles y ejecución del motor. Esto valida el contrato de ejecución básica del suplemento, pero no equivale a volver a ejecutar los 24 escenarios × 300 réplicas de cada experimento.
+
 ## Limitaciones científicas
 
 - Los resultados son estimaciones de simulación, no mejoras operativas ni ahorros medidos.
@@ -37,4 +39,4 @@ Los CSV de salida por fila no están versionados en esta instantánea Git; puede
 
 ## Análisis externo SAG de Constancia
 
-Los agregados de `data/constancia_aggregated/` derivan de 14 surveys publicados en la Tabla 13-2 de Hudbay Minerals Inc. (2021). La transcripción fila por fila y las figuras con observaciones individuales no se redistribuyen aquí. Para recalcular los agregados se debe preparar localmente el CSV descrito en `docs/FUENTE_Y_NOTAS_CONSTANCIA.md`. No se afirma que Hudbay haya autorizado la redistribución de su tabla original.
+Los agregados de `data/constancia_aggregated/` derivan de 14 surveys publicados en la Tabla 13-2 de Hudbay Minerals Inc. (2021). La transcripción fila por fila y las figuras con observaciones individuales no se redistribuyen aquí. Para recalcular los agregados se debe preparar localmente el CSV descrito en `docs/FUENTE_Y_NOTAS_CONSTANCIA.md`. No se afirma que Hudbay haya autorizado la redistribución de su tabla original. La licencia CC BY 4.0 de los agregados cubre únicamente derechos que los autores posean sobre sus cálculos, selección y presentación, no el informe ni los materiales fuente de Hudbay.

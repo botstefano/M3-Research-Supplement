@@ -23,6 +23,16 @@ jobs:
         run: npm install
       - name: Run M-3 research tests
         run: npm run test:research-v3
+      - name: Generate and execute one-replication smoke tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/generate-research-v3-profiles.mjs --experiment 1 --scenario 2p8c_none_hom --replicates 1 --output /tmp/m3-smoke/exp1
+          node scripts/run-research-v3-batch.mjs --experiment 1 --scenario 2p8c_none_hom --replicates 1 --input-dir /tmp/m3-smoke/exp1 --output /tmp/m3-smoke/experiment1.csv
+          test "$(wc -l < /tmp/m3-smoke/experiment1.csv)" -eq 9
+          node scripts/generate-research-v3-profiles.mjs --experiment 2 --scenario 2p8c_none_het --replicates 1 --output /tmp/m3-smoke/exp2
+          node scripts/run-research-v3-batch.mjs --experiment 2 --scenario 2p8c_none_het --replicates 1 --input-dir /tmp/m3-smoke/exp2 --output /tmp/m3-smoke/experiment2.csv
+          test "$(wc -l < /tmp/m3-smoke/experiment2.csv)" -eq 11
       - name: Set up Python
         uses: actions/setup-python@v5
         with:

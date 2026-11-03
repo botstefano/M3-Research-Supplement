@@ -1,8 +1,8 @@
 # Metadatos propuestos para Zenodo
 
-**Tipo de recurso propuesto:** Software (el registro reúne código de simulación y análisis junto con datos suplementarios agregados; confirmar la categoría disponible en Zenodo).  
-**Título:** M-3 research supplement: simulation code, synthetic profiles and aggregated results  
-**Versión propuesta:** 1.0.0 (no publicar hasta revisión y aprobación de ambos autores).  
+**Tipo de recurso propuesto:** Software (incluye código ejecutable y datos complementarios agregados).  
+**Título:** M-3 research supplement: simulation software, synthetic profiles and aggregated research data  
+**Versión propuesta:** 1.0.0 (release prevista después de aprobar el PR y habilitar la integración).  
 **Idioma principal:** Español.  
 **DOI:** no asignado; Zenodo lo asignará al publicar la versión archivada.
 
@@ -11,7 +11,7 @@
 1. Estefano Dubersky Urbina-Justiniano — Facultad de Ingeniería, Escuela de Ingeniería de Sistemas, Universidad Nacional de Trujillo, Perú.
 2. José Brandon Laiza-Condormango — Facultad de Ingeniería, Escuela de Ingeniería de Sistemas, Universidad Nacional de Trujillo, Perú.
 
-No se incluyen ORCID porque no han sido confirmados por ambos autores.
+No se incluyen ORCID porque no han sido confirmados.
 
 ## Descripción sugerida
 
@@ -39,6 +39,13 @@ Los resúmenes agregados se incluyen en `data/m3/`. Los CSV individuales de 129.
 - Ejecución integral: https://github.com/botstefano/M3-GemeloDigital-Limpio/actions/runs/41558645366
 - Hudbay Minerals Inc. (2021). *NI 43-101 Technical Report: Constancia Mine, Cuzco, Peru*. Tabla 13-2.
 
-## Licencia
+## Licencias múltiples
 
-No seleccionar CC0, CC-BY ni otra licencia hasta que ambos autores confirmen por escrito la licencia aplicable a cada componente que pueden distribuir. Zenodo exige seleccionar una licencia compatible con los derechos del contenido depositado.
+Este depósito contiene materiales con dos licencias, de acuerdo con el esquema vigente de Zenodo para cargas con licencias mixtas:
+
+1. **MIT** — código fuente, scripts, motor, pruebas, esquemas JSON, plantilla y checkpoints PPO.
+2. **CC BY 4.0** — documentación, metadatos y tablas de datos agregadas.
+
+En el formulario de Zenodo, usar el selector para incluir ambas licencias y verificar su alcance antes de publicar. No usar únicamente la licencia predeterminada del formulario. La guía de Zenodo para cargas con licencias mixtas está en https://help.zenodo.org/docs/deposit/describe-records/licenses/.
+
+CC BY 4.0 cubre únicamente derechos que los autores pueden licenciar en sus cálculos, selección y presentación; no cubre el informe de Hudbay ni supone autorización de Hudbay sobre sus materiales.

@@ -9,7 +9,7 @@
 - `test-research-v3-engine.mjs`: prueba el motor, checkpoints y ejecución.
 - `test-research-batch.mjs`: prueba la interfaz del ejecutor por lotes.
 
-La guía completa está en `docs/REPRODUCCION_M3_V3.md`. Requiere Node.js 20+ y TypeScript 5.8.2. Los perfiles generados son reconstrucciones sintéticas, no mediciones de campo.
+La guía completa está en `docs/REPRODUCCION_M3_V3.md`. Requiere Node.js 20+ y TypeScript 5.8.2. Los perfiles generados son reconstrucciones sintéticas, no datos de campo.
 
 ## Análisis estadístico M-3 (Python)
 
@@ -25,7 +25,7 @@ Ejecución después de generar los CSV individuales:
 python scripts/analyze_research_v3.py --exp1 ./research-results/experiment1.csv --exp2 ./research-results/experiment2.csv --output-dir ./research-analysis
 ~~~
 
-El script valida dimensiones, claves y valores numéricos; calcula los contrastes confirmatorios, Holm, Wilcoxon, tamaños de efecto, intervalos bootstrap y tablas agregadas.
+El script valida dimensiones, duplicados y valores finitos, y calcula contrastes confirmatorios, corrección Holm, Wilcoxon, tamaños de efecto, intervalos bootstrap y tablas resumen.
 
 ## Recálculo externo SAG de Constancia
 

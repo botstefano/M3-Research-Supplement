@@ -23,7 +23,7 @@ python -m pip install -r scripts/requirements-research-analysis.txt
 
 Las dependencias del análisis externo SAG de Constancia son independientes y están en `scripts/requirements.txt`.
 
-## 2. Ejecutar las pruebas de software
+## 2. Ejecutar pruebas de software
 
 ~~~bash
 npm run test:research-v3
@@ -31,7 +31,21 @@ npm run test:research-v3
 
 Las pruebas comprueban contratos de datos, ejecución del motor, checkpoints, runner por lotes y reproducibilidad del generador. No constituyen validación geológica, calibración SAG ni validación industrial.
 
-## 3. Generar perfiles de entrada
+## 3. Smoke test de generación y ejecución
+
+El workflow CI automatiza un smoke test de una réplica en un escenario de cada experimento. Para repetirlo manualmente:
+
+~~~bash
+node scripts/generate-research-v3-profiles.mjs --experiment 1 --scenario 2p8c_none_hom --replicates 1 --output ./tmp/exp1
+node scripts/run-research-v3-batch.mjs --experiment 1 --scenario 2p8c_none_hom --replicates 1 --input-dir ./tmp/exp1 --output ./tmp/experiment1.csv
+
+node scripts/generate-research-v3-profiles.mjs --experiment 2 --scenario 2p8c_none_het --replicates 1 --output ./tmp/exp2
+node scripts/run-research-v3-batch.mjs --experiment 2 --scenario 2p8c_none_het --replicates 1 --input-dir ./tmp/exp2 --output ./tmp/experiment2.csv
+~~~
+
+La salida esperada es 8 filas de políticas más encabezado en E1 y 10 filas más encabezado en E2. Este control prueba la ruta básica del generador y del motor; no sustituye la ejecución integral.
+
+## 4. Generar perfiles de entrada completos
 
 ~~~bash
 npm run generate:research-v3-profiles -- --experiment 1 --output ./research-input/exp1
@@ -42,7 +56,7 @@ Cada experimento genera 24 escenarios × 300 archivos JSON = 7.200 archivos. En 
 
 Las semillas de evaluación son 20.001–20.300 para E1 y 30.001–30.300 para E2. El generador usa Park–Miller, descarta los primeros 50 valores uniformes y aplica Box–Muller (rama coseno). El orden de sorteo por pala es A, B y S.
 
-## 4. Ejecutar los lotes completos
+## 5. Ejecutar los lotes completos
 
 ~~~bash
 npm run run:research-v3 -- --experiment 1 --input-dir ./research-input/exp1 --output ./research-results/experiment1.csv
@@ -59,7 +73,7 @@ npm run run:research-v3 -- --experiment 2 --input-dir ./research-input/exp2 --ou
 
 El ejecutor valida los archivos de entrada antes de simular y escribe una fila por escenario, réplica y política. Los directorios `research-input/` y `research-results/` están excluidos de Git para evitar versionar archivos grandes generados.
 
-## 5. Recalcular el análisis estadístico
+## 6. Recalcular el análisis estadístico
 
 ~~~bash
 python scripts/analyze_research_v3.py \
@@ -78,7 +92,7 @@ El script valida el número de filas, escenarios, réplicas y políticas, claves
 
 El análisis incluye pruebas t pareadas por escenario, corrección de Holm dentro de cada familia confirmatoria, pruebas de Wilcoxon como análisis de sensibilidad, tamaño de efecto dz e intervalos bootstrap percentil del 95 % para la diferencia media pareada con 10.000 remuestreos. La semilla bootstrap es 20261103. La diferencia relativa porcentual se define como 100 × (media de la política / media de referencia − 1), calculada dentro de cada escenario.
 
-## 6. Cotejo con la ejecución archivada
+## 7. Cotejo con la ejecución archivada
 
 La ejecución integral confirmada está en [GitHub Actions run 41558645366](https://github.com/botstefano/M3-GemeloDigital-Limpio/actions/runs/41558645366), ejecutada desde el commit `72e7e78812c76eb574c80402176588507697068c`. Los artefactos de GitHub Actions tienen retención temporal y no deben considerarse archivo permanente.
 
